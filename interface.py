@@ -1,5 +1,8 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
+from algoritmos.a_estrela import buscar_a_estrela_real
+from algoritmos.BFS import buscar_bfs_real
+from algoritmos.DFS import buscar_dfs_real
 import time
 
 # =====================================================================
@@ -38,11 +41,17 @@ def executar_busca(algoritmo, heuristica, estado_inicial):
         estado_final
     ]
     
-    nos_visitados = 42
-    profundidade = len(caminho_ficticio) - 1
-    tempo_execucao = 0.502
     
-    return caminho_ficticio, nos_visitados, profundidade, tempo_execucao
+    if algoritmo == "BFS":
+        caminho, nos_visitados, profundidade = buscar_bfs_real(estado_inicial)
+    elif algoritmo == "DFS":
+        caminho, nos_visitados, profundidade = buscar_dfs_real(estado_inicial)
+    elif algoritmo == "A*":
+        caminho, nos_visitados, profundidade = buscar_a_estrela_real(estado_inicial, heuristica)
+    else:
+        messagebox.showwarning("Não implementado")
+        return [], 0, 0, 0.0
+    return caminho, nos_visitados, profundidade, 0
 
 
 # =====================================================================
@@ -188,22 +197,22 @@ class App8Puzzle:
             return
             
         if not verificar_solubilidade(estado_inicial):
-            messagebox.showwarning("Insolúvel", "Esta configuração inicial não possui solução!") [cite: 11]
+            messagebox.showwarning("Insolúvel", "Esta configuração inicial não possui solução!") #[cite: 11]
             return
             
         alg = self.combo_algoritmo.get()
         heur = self.combo_heuristica.get() if alg in ["A*", "Gulosa"] else "N/A"
         
         # Executa a busca
-        caminho, nos, prof, tempo = executar_busca(alg, heur, estado_inicial) [cite: 33, 34, 35, 36]
+        caminho, nos, prof, tempo = executar_busca(alg, heur, estado_inicial) #[cite: 33, 34, 35, 36]
         
         # Atualiza métricas obrigatórias na tela
-        self.lbl_tempo.config(text=f"Tempo de Execução: {tempo:.4f}s") [cite: 36, 44]
-        self.lbl_nos.config(text=f"Nós Visitados: {nos}") [cite: 34, 45]
-        self.lbl_profundidade.config(text=f"Profundidade: {prof}") [cite: 35, 46]
+        self.lbl_tempo.config(text=f"Tempo de Execução: {tempo:.4f}s") #[cite: 36, 44]
+        self.lbl_nos.config(text=f"Nós Visitados: {nos}") #[cite: 34, 45]
+        self.lbl_profundidade.config(text=f"Profundidade: {prof}") #[cite: 35, 46]
         
         # Guarda os dados do caminho
-        self.caminho_solucao = caminho [cite: 33]
+        self.caminho_solucao = caminho #[cite: 33]
         self.passo_atual = 0
         self.lbl_passo.config(text=f"Passo: {self.passo_atual} / {len(self.caminho_solucao)-1}")
         
