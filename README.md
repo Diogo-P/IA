@@ -19,3 +19,43 @@ This project models the 8-Puzzle as a state-space search problem, demonstrating 
 ├── interface.py     # Graphical user interface for puzzle visualization
 ├── puzzle.py        # 8-Puzzle state representation and valid move logic
 └── main.py          # Application entry point
+```
+
+## Prerequisites
+
+* **Python 3.8+**
+* Standard Python libraries (no external dependencies required if using `tkinter`; if you use `pygame` or another library, install it via `pip`).
+
+## How to Run
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Diogo-P/IA.git](https://github.com/Diogo-P/IA.git)
+   cd IA
+   ```
+
+2. **Execute the application:**
+   ```bash
+   python main.py
+   ```
+
+## Complexity Analysis
+
+| Algorithm | Complete | Optimal | Time Complexity | Space Complexity |
+| :--- | :---: | :---: | :---: | :---: |
+| **BFS** | Yes | Yes | $O(b^d)$ | $O(b^d)$ |
+| **DFS** | No* | No | $O(b^m)$ | $O(b \cdot m)$ |
+| **A\* (Manhattan)** | Yes | Yes | $O(b^d)$ (worst case) | $O(b^d)$ |
+
+*\*Complete only in finite state spaces with cycle/visited-state checking.*  
+*($b$: branching factor, $d$: depth of optimal solution, $m$: maximum depth of the state space)*
+
+## Preview
+
+<!--
+To add a screenshot:
+1. Create an `assets/` folder in the root directory.
+2. Save a screenshot of the GUI running as `assets/preview.png`.
+3. Uncomment the line below:
+-->
+<!-- ![8-Puzzle Solver Interface](assets/preview.png) -->
