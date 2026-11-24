@@ -25,7 +25,7 @@ This project models the 8-Puzzle as a state-space search problem, demonstrating 
 
 * **Python 3.8+**
 * No external dependencies required (uses Python's built-in `tkinter`).
-* 
+  
 ## How to Run
 
 1. **Clone the repository:**
