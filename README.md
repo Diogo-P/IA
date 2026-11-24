@@ -49,3 +49,4 @@ This project models the 8-Puzzle as a state-space search problem, demonstrating 
 
 *\*Complete only in finite state spaces with cycle/visited-state checking.*  
 *($b$: branching factor, $d$: depth of optimal solution, $m$: maximum depth of the state space)*
+
