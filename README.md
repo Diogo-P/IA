@@ -19,3 +19,12 @@ This project models the 8-Puzzle as a state-space search problem, demonstrating 
 ├── interface.py     # Graphical user interface for puzzle visualization
 ├── puzzle.py        # 8-Puzzle state representation and valid move logic
 └── main.py          # Application entry point
+
+##How to Run
+Clone the repository:
+git clone [https://github.com/Diogo-P/IA.git](https://github.com/Diogo-P/IA.git)
+cd IA
+
+Run the application:
+python main.py
+(Requires Python 3.x. Add pip install -r requirements.txt here if external GUI libraries are used.)
