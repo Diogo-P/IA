@@ -30,8 +30,7 @@ This project models the 8-Puzzle as a state-space search problem, demonstrating 
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/Diogo-P/IA.git](https://github.com/Diogo-P/IA.git)
-   cd IA
+   git clone https://github.com/Diogo-P/IA.git
    ```
 
 2. **Execute the application:**
