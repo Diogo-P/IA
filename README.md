@@ -24,8 +24,8 @@ This project models the 8-Puzzle as a state-space search problem, demonstrating 
 ## Prerequisites
 
 * **Python 3.8+**
-* Standard Python libraries (no external dependencies required if using `tkinter`; if you use `pygame` or another library, install it via `pip`).
-
+* No external dependencies required (uses Python's built-in `tkinter`).
+* 
 ## How to Run
 
 1. **Clone the repository:**
